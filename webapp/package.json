@@ -1,0 +1,17 @@
+{
+  "name": "boot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scalableminds/boot"
+  },
+  "author": "Your Name <email@scm.io>",
+  "license": "MIT",
+  "homepage": "https://github.com/scalableminds/boot",
+  "dependencies": {
+    "coffee-script": "git://github.com/scalableminds/coffee-script",
+    "gulp": "^3.8.6"
+  }
+}
