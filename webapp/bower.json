@@ -17,6 +17,7 @@
     "almond": "~0.2.9",
     "jquery": "~2.1.1",
     "bootstrap": "~3.2.0",
-    "syphon": "scalableminds/syphon#~0.4.1"
+    "syphon": "scalableminds/syphon#~0.4.1",
+    "font-awesome": "~4.1.0"
   }
 }

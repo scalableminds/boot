@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{ NAME }</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="{ NAME }">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-icon-ipad.png" />
+
+    <link rel="stylesheet" type="text/css" href="/styles/index.css" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <!-- Dynamic html injection -->
+    </div>
+
+    <script type="text/javascript" src="/bower_components/requirejs/require.js"></script>
+    <script type="text/javascript" src="/scripts/index.js"></script>
+    <script type="text/javascript">require(["index"], function(){});</script>
+  </body>
+</html>
