@@ -1,4 +1,4 @@
-# Project
+# { NAME }
 
 Synopsis
 
@@ -7,4 +7,5 @@ Synopsis
 ## Usage
 
 ## Licence
-&copy; <%= new Date().getFullYear() %> scalable minds
+All rights reserved.  
+&copy; 2014 scalable minds
