@@ -8,13 +8,13 @@ module.exports = (gulp, $, options) ->
         options.dest.scripts
         extension : ".js"
       ))
-      .pipe($.sourcemaps.init())
+      # .pipe($.sourcemaps.init())
       .pipe($.if(
         (file) -> return path.extname(file.path) == ".coffee"
         $.coffee()
       ))
       .on("error", $.handleError)
-      .pipe($.sourcemaps.write())
+      # .pipe($.sourcemaps.write())
       .pipe(gulp.dest(options.dest.scripts))
       .pipe($.logger())
   )
@@ -23,9 +23,9 @@ module.exports = (gulp, $, options) ->
 
     $.amdOptimize.src("index"
       loader : $.amdOptimize.loader(
-        (name) -> "dist/scripts/#{name}.js"
+        (name) -> "#{options.dest.dir}/scripts/#{name}.js"
       )
-      configFile : gulp.src("app/scripts/require_config.coffee").pipe($.coffee())
+      configFile : gulp.src("#{options.src.dir}/scripts/require_config.coffee").pipe($.coffee())
     )
       .on("error", $.handleError)
       .pipe($.concat("index.min.js"))

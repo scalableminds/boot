@@ -6,11 +6,17 @@ lib/uber_router : UberRouter
 
 class Router extends UberRouter
 
+  rootSelector : "#main"
+  navbarSelector : "#navbar"
+
   routes :
-    "/" : "home"
+    "" : "home"
 
   whitelist : []
 
   home : ->
 
-    @changeView(new Backbone.View())
+    view = new Backbone.View()
+    view.render()
+    view.$el.html("What up!")
+    @changeView(view)

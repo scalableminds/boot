@@ -19,4 +19,5 @@ require [
     )
   )
 
-  app.start()
+  $ ->
+    app.start()

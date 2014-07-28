@@ -9,7 +9,6 @@ try {
   $ = require("gulp-load-plugins")();
   $.amdOptimize = require("amd-optimize");
   $.rimraf = require("rimraf");
-  $.ecstatic = require("ecstatic");
   $.through = require("through2");
 
   path = require("path");
@@ -26,18 +25,7 @@ try {
   }
 }
 
-var options = {
-  "src": {
-    "scripts": "app/scripts/**/*.{js,coffee}",
-    "styles": "app/styles/index.less",
-    "images": "app/images/**/*.{jpg,png,gif}"
-  },
-  "dest": {
-    "scripts": "dist/scripts",
-    "styles": "dist/styles",
-    "images": "dist/images"
-  }
-};
+var options = require("./gulp_options.json");
 
 
 $.handleError = function (err) {
@@ -62,7 +50,7 @@ Object.keys(tasks).forEach(function (taskFilename) {
 
 
 gulp.task("watching", function (done) {
-  gulp.watch("app/**/*", ["build"]);
+  gulp.watch(options.src.dir + "/**/*", ["build"]);
 });
 
 gulp.task("build", ["scripts", "scripts_min", "styles", "html", "images"]);

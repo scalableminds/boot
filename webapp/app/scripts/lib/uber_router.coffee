@@ -16,8 +16,6 @@ class UberRouter extends Backbone.Router
 
   changeView : (views...) ->
 
-    $("#main-container").addClass("container wide")
-
     # Remove current views
     if @activeViews
       for view in @activeViews
@@ -28,13 +26,13 @@ class UberRouter extends Backbone.Router
           view.remove()
     else
       # we are probably coming from a URL that isn't a Backbone.View yet (or page reload)
-      @$mainContainer.empty()
+      @$rootEl.empty()
 
     # Add new views
     @activeViews = views
 
     for view in views
-      @$mainContainer.append(view.render().el)
+      @$rootEl.append(view.render().el)
 
     return
 

@@ -1,8 +1,8 @@
-module.exports = (gulp, $) ->
+module.exports = (gulp, $, options) ->
 
   gulp.task("html", (done) ->
-    gulp.src("app/index.html")
-      .pipe($.changed("dist"))
-    	.pipe(gulp.dest("dist"))
+    gulp.src(options.src.html)
+      .pipe($.changed(options.dest.dir))
+    	.pipe(gulp.dest(options.dest.dir))
       .pipe($.logger())
   )

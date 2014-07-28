@@ -1,5 +1,5 @@
 module.exports = (gulp, $) ->
 
   gulp.task("clean", (done) ->
-    $.rimraf("./dist", done)
+    $.rimraf(options.dest.dir, done)
   )
