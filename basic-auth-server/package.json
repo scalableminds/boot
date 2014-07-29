@@ -1,0 +1,15 @@
+{
+  "name": "basic-auth-server",
+  "version": "0.0.1",
+  "description": "A simple static http server with Basic Auth meant for deploy on Heroku et al.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Norman Rzepka <norman.rzepka@scm.io> (http://scm.io)",
+  "license": "MIT",
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "express": "^4.7.2"
+  }
+}
