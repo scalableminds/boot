@@ -10,8 +10,10 @@ module.exports = (gulp, $, options) ->
       ))
       # .pipe($.sourcemaps.init())
       .pipe($.if(
-        (file) -> return path.extname(file.path) == ".coffee"
+        (file) ->
+          return path.extname(file.path) == ".coffee"
         $.coffee()
+          .on("error", $.handleError)
       ))
       .on("error", $.handleError)
       # .pipe($.sourcemaps.write())

@@ -18,5 +18,5 @@ class Router extends UberRouter
 
     view = new Backbone.View()
     view.render()
-    view.$el.html("What up!")
+    view.$el.html("""<i class="fa fa-check"></i> What up!""")
     @changeView(view)

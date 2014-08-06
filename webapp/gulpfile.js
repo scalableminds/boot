@@ -1,5 +1,7 @@
 require('coffee-script').register();
 
+var options = require("./gulp_options.json");
+
 // Load gulp and dependent plugins
 var gulp, util, path, $;
 
@@ -7,9 +9,12 @@ try {
   gulp = require("gulp");
 
   $ = require("gulp-load-plugins")();
-  $.amdOptimize = require("amd-optimize");
-  $.rimraf = require("rimraf");
-  $.through = require("through2");
+
+  if (options.modules) {
+    for (key in options.modules) {
+      $[key] = require(options.modules[key]);
+    }
+  }
 
   path = require("path");
   util = require("gulp-util");
@@ -25,12 +30,13 @@ try {
   }
 }
 
-var options = require("./gulp_options.json");
-
 
 $.handleError = function (err) {
-  util.log(util.colors.red("!!"), err.toString())
-  util.beep()
+  util.log(util.colors.red("!!"), err.toString());
+  util.beep();
+  if (this.end) {
+    this.end();
+  }
 }
 
 $.logger = function () {

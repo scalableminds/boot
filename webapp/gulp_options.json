@@ -12,5 +12,10 @@
     "styles": "dist/styles",
     "images": "dist/images"
   },
-  "port": 8080
+  "port": 8080,
+  "modules": {
+    "amdOptimize": "amd-optimize",
+    "rimraf": "rimraf",
+    "through": "through2"
+  }
 }
