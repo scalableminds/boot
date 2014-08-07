@@ -62,6 +62,10 @@ class UberRouter extends Backbone.Router
       url = $(evt.currentTarget).attr("href")
       if url == "#"
         return
+        
+      # allow opening links in new tabs
+      if evt.metaKey
+        return
 
       if _.contains(@whitelist, url) or url.indexOf("http") == 0
         return
