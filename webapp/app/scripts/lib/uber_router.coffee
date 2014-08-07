@@ -12,6 +12,7 @@ class UberRouter extends Backbone.Router
     @$rootEl = $(@rootSelector)
     @$navbarEl = $(@navbarSelector)
     @activeViews = null
+    @handlePageLinks()
 
 
   changeView : (views...) ->
@@ -62,13 +63,17 @@ class UberRouter extends Backbone.Router
       if url == "#"
         return
 
-      if _.contains(@whitelist, url)
+      if _.contains(@whitelist, url) or url.indexOf("http") == 0
         return
 
       urlWithoutSlash = url.slice(1)
-      if @routes[urlWithoutSlash]
-        evt.preventDefault()
-        @navigate(url, trigger : true)
+      for route of @routes
+        regex = @_routeToRegExp(route)
+        if regex.test(urlWithoutSlash)
+          evt.preventDefault()
+          @navigate(url, trigger : true)
+ 
+          return
 
       return
     )
