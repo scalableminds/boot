@@ -66,6 +66,10 @@ class UberRouter extends Backbone.Router
       # allow opening links in new tabs
       if evt.metaKey
         return
+        
+      # allow target=_blank etc
+      if evt.currentTarget.target != ""
+        return
 
       if _.contains(@whitelist, url) or url.indexOf("http") == 0
         return
