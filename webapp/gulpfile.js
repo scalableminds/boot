@@ -3,10 +3,11 @@ require('coffee-script').register();
 var options = require("./gulp_options.json");
 
 // Load gulp and dependent plugins
-var gulp, util, path, $;
+var gulp, util, path, through2, $;
 
 try {
   gulp = require("gulp");
+  through2 = require("through2");
 
   $ = require("gulp-load-plugins")();
 
@@ -40,7 +41,7 @@ $.handleError = function (err) {
 }
 
 $.logger = function () {
-  return $.through.obj(function (file, enc, done) {
+  return through2.obj(function (file, enc, done) {
     util.log(">>", util.colors.yellow(path.relative(process.cwd(), file.path)));
     done(null, file);
   });

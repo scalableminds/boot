@@ -1,0 +1,22 @@
+{
+  "name": "bower-component",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scalableminds/boot"
+  },
+  "author": "Norman Rzepka <norman@scm.io> (http://scm.io)",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "git://github.com/scalableminds/coffee-script",
+    "gulp": "^3.8.6",
+    "gulp-coffee": "^2.1.1",
+    "gulp-concat": "^2.3.4"
+  },
+  "dependencies": {
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.0.5"
+  }
+}
