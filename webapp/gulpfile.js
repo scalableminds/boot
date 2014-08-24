@@ -10,10 +10,11 @@ try {
   through2 = require("through2");
 
   $ = require("gulp-load-plugins")();
-
-  if (options.modules) {
-    for (key in options.modules) {
-      $[key] = require(options.modules[key]);
+  
+  var modules = options.additionalModules;
+  if (modules) {
+    for (key in modules) {
+      $[key] = require(modules[key]);
     }
   }
 
