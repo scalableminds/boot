@@ -60,7 +60,7 @@ gulp.task("watching", function (done) {
   gulp.watch(options.src.dir + "/**/*", ["build"]);
 });
 
-gulp.task("build", ["scripts", "scripts_min", "styles", "html", "images"]);
+gulp.task("build", ["scripts", "scripts_min", "styles", "copy", "images"]);
 gulp.task("watch", ["build", "serve", "watching"]);
 
 gulp.task("default", ["build"]);
