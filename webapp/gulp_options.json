@@ -17,7 +17,7 @@
     "images": "dist/images"
   },
   "port": 8080,
-  "modules": {
+  "additionalModules": {
     "amdOptimize": "amd-optimize",
     "rimraf": "rimraf"
   }
