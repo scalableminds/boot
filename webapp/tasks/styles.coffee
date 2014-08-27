@@ -5,10 +5,7 @@ module.exports = (gulp, $, options) ->
     gulp.src(options.src.styles)
       # .pipe($.sourcemaps.init())
       .pipe($.less(
-        paths : [
-          "dist"
-          "app/styles"
-        ]
+        paths : options.src.styles_paths
       ))
       .on("error", $.handleError)
       # .pipe($.sourcemaps.write())

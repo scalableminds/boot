@@ -4,6 +4,10 @@
     "copy": ["app/index.html"],
     "scripts": "app/scripts/**/*.{js,coffee}",
     "styles": "app/styles/index.less",
+    "styles_paths": [
+      "dist",
+      "app/styles"
+    ],
     "images": "app/images/**/*.{jpg,png,gif}"
   },
   "dest": {
@@ -13,7 +17,7 @@
     "images": "dist/images"
   },
   "port": 8080,
-  "additionalModules": {
+  "modules": {
     "amdOptimize": "amd-optimize",
     "rimraf": "rimraf"
   }
