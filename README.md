@@ -10,6 +10,13 @@ Sources in `src`, distribution files in `dist` or `www`.
 Use `cordova-create.sh <project-name>` inside the project's directory to integrate Cordova.
 No platforms are added by default. Run `cordova platforms add ios` for example.
 
+### Dependencies
+* node
+* npm
+* gulp
+* bower
+* cordova (optional)
+
 ## basic-auth-server
 A simple express server with basic auth. Use `NODE_USERNAME` and `NODE_PASSWORD` in your env.
 
