@@ -16,7 +16,11 @@
     "styles": "www/styles",
     "images": "www/images"
   },
-  "port": 8080,
+  "serve": {
+    "port": 8080,
+    "root": "www",
+    "defaultFile": "index.html"
+  },
   "additionalModules": {
     "amdOptimize": "amd-optimize",
     "rimraf": "rimraf"

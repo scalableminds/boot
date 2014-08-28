@@ -1,9 +1,9 @@
 module.exports = (gulp, $, options) ->
 
   gulp.task("serve", (done) ->
-    gulp.src("dist")
+    gulp.src(options.serve.root)
       .pipe($.webserver(
-        fallback : "index.html"
-        port : options.port
+        fallback : options.serve.defaultFile
+        port : options.serve.port
       ))
   )
