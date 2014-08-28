@@ -5,16 +5,16 @@
     "scripts": "app/scripts/**/*.{js,coffee}",
     "styles": "app/styles/index.less",
     "styles_paths": [
-      "dist",
+      "www",
       "app/styles"
     ],
     "images": "app/images/**/*.{jpg,png,gif}"
   },
   "dest": {
-    "dir": "dist",
-    "scripts": "dist/scripts",
-    "styles": "dist/styles",
-    "images": "dist/images"
+    "dir": "www",
+    "scripts": "www/scripts",
+    "styles": "www/styles",
+    "images": "www/images"
   },
   "port": 8080,
   "additionalModules": {
