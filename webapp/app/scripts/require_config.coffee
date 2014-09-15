@@ -16,14 +16,6 @@ require.config(
       underscore : "lodash"
 
 
-  shim :
-    "jquery.easie" :
-      deps : [ "jquery" ]
-    "jquery.transit" :
-      deps : [ "jquery" ]
-    "inflate" :
-      exports : "Zlib"
-    "vendor/analytics" :
-      exports : "ga"
+  shim : {}
 
 )
