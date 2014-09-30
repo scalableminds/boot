@@ -64,7 +64,7 @@ class UberRouter extends Backbone.Router
         return
         
       # allow opening links in new tabs
-      if evt.metaKey
+      if evt.metaKey or evt.ctrlKey
         return
         
       # allow target=_blank etc
