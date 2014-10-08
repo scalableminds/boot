@@ -1,4 +1,6 @@
 path = require("path")
+requireSugar = require("require-sugar")
+
 module.exports = (gulp, $, options) ->
 
   gulp.task("scripts", ->
@@ -9,6 +11,7 @@ module.exports = (gulp, $, options) ->
         extension : ".js"
       ))
       # .pipe($.sourcemaps.init())
+      .pipe(requireSugar())
       .pipe($.if(
         (file) ->
           return path.extname(file.path) == ".coffee"
@@ -27,7 +30,10 @@ module.exports = (gulp, $, options) ->
       loader : $.amdOptimize.loader(
         (name) -> "#{options.dest.dir}/scripts/#{name}.js"
       )
-      configFile : gulp.src("#{options.src.dir}/scripts/require_config.coffee").pipe($.coffee())
+      configFile :
+        gulp.src("#{options.src.dir}/scripts/require_config.coffee")
+          .pipe(requireSugar())
+          .pipe($.coffee())
     )
       .on("error", $.handleError)
       .pipe($.concat("index.min.js"))
