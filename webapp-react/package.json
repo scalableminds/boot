@@ -13,9 +13,10 @@
     "reactify": "^0.13.1",
     "vinyl-source-stream": "^0.1.1",
     "envify": "^1.2.1",
-    "react": "^0.10.0",
+    "react": "^0.12.0",
     "watchify": "^0.8.3",
-    "gulp-util": "^2.2.14"
+    "gulp-util": "^2.2.14",
+    "react-router": "^0.12.0"
   },
   "engines": {
     "node": ">=0.10.0"

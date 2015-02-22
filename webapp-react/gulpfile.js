@@ -25,7 +25,7 @@ var dist = 'dist';
 var htmlFiles = 'app/**/*.html';
 var htmlBuild = dist;
 
-var jsxFiles = 'app/jsx/**/*.jsx';
+var jsxFiles = 'app/**/*.jsx';
 
 var vendorFiles = [
     'bower_components/react/react-with-addons.js',
@@ -49,7 +49,7 @@ gulp.task('html', function () {
 function compileScripts(watch) {
     gutil.log('Starting browserify');
 
-    var entryFile = './app/jsx/app.jsx';
+    var entryFile = './app/scripts/main.jsx';
     es6ify.traceurOverrides = {experimental: true};
 
     var bundler;
@@ -61,7 +61,7 @@ function compileScripts(watch) {
 
     bundler.require(requireFiles);
     bundler.transform(reactify);
-    bundler.transform(es6ify.configure(/.jsx/));
+    bundler.transform(es6ify.configure(/.js/));
 
     var rebundle = function () {
         var stream = bundler.bundle({ debug: true});
@@ -72,7 +72,7 @@ function compileScripts(watch) {
 
         stream.pipe(gulp.dest('dist/bundle'));
     }
-        
+
     bundler.on('update', rebundle);
     return rebundle();
 }
