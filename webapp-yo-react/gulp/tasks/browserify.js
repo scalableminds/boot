@@ -7,6 +7,9 @@ var watchify = require('watchify');
 var connect = require('gulp-connect');
 var config = require('../config').browserify;
 
+// force sourcemaps
+watchify.args.debug = true;
+
 var bundler = watchify(browserify(config.src, watchify.args));
 config.settings.transform.forEach(function(t) {
   bundler.transform(t);
