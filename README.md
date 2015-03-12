@@ -4,6 +4,9 @@ Templates for creating new projects
 ## webapp
 All the stuff for a single-page frontend app. With Gulp, CoffeeScript, Less, Bootstrap, Backbone, Marionette, RequireJS and all other friends.
 
+## webapp-yo-react
+Based on a yeoman template, this template includes a proper setup for a modern single-page frontend app based on ES6 (through Babel), React, React-Bootstrap, alt (a terse flux implementation), Gulp and browserify.
+
 ### Usage
 Download a zip of the repo from Github and extract the `webapp` somewhere and rename it.
 Sources in `app`, distribution files in `dist` or `www`.
